@@ -34,8 +34,8 @@
                 <th>Name</th>
             </tr>
             <tbody>
-                <tr v-for="item in list">
-                    <td>{{ item.name }}</td>
+                <tr v-for="(item, index) in list">
+                    <td>{{ item.name }} - {{index}}</td>
                 </tr>
             </tbody>
         </table>
