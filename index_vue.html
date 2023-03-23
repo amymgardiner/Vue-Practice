@@ -16,7 +16,7 @@
 
         </select>
 
-        <input type="text" v-model="name" />
+        <input type="text" v-model="name" /> <button type="button" v-on:click="add()">Add</button>
 
         <div>
             {{name}}
@@ -53,8 +53,6 @@
             show_div: true,
             name: "",
             list: [
-                { name: "Name 01" },
-                { name: "Name 02" },
             ]
         },
 
@@ -65,6 +63,11 @@
 
             show() {
                 this.show_div = true;
+            },
+
+            add() {
+                this.list.push({ name: this.name });
+                this.name = "";
             }
         }
 
