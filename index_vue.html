@@ -8,9 +8,14 @@
         <button type="button" v-on:click="show()" v-if="show_div==false">Show</button>
         <!-- v-if="!show_div" is the same thing as v-if="show_div==false"-->
 
+        <br>
+        <br>
+        <br>
+
         <select>
 
         </select>
+
         <input type="text" v-model="name" />
 
         <div>
@@ -19,19 +24,18 @@
         <br>V_HTML
         <div v-html="name">
         </div>
+
         <br>
         <br>
         <br>V_FOR
+
         <table>
             <tr>
                 <th>Name</th>
             </tr>
             <tbody>
-                <tr>
-                    <td>Name 1</td>
-                </tr>
-                <tr>
-                    <td>Name 2</td>
+                <tr v-for="item in list">
+                    <td>{{ item.name }}</td>
                 </tr>
             </tbody>
         </table>
