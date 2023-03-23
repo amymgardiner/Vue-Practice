@@ -1,14 +1,14 @@
 <body>
     <div id="app">
-        <div>
+        <div v-if="show_div">
             Hello, world.
         </div>
-        <button type="button">Hide</button>
-        <button type="button">Show</button>
+        <button type="button" v-on:click="hide()">Hide</button>
+        <button type="button" v-on:click="show()">Show</button>
     </div>
 </body>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 
 <script>
     var app = new Vue({
