@@ -1,11 +1,22 @@
 <body>
     <div id="app">
+
         <div v-if="show_div">
             Hello, world.
         </div>
         <button type="button" v-on:click="hide()" v-if="show_div">Hide</button>
         <button type="button" v-on:click="show()" v-if="show_div==false">Show</button>
         <!-- v-if="!show_div" is the same thing as v-if="show_div==false"-->
+
+        <input type="text" v-model="name" />
+
+        <div>
+            {{name}}
+        </div>
+        <br>V_HTML
+        <div v-html="name">
+        </div>
+
     </div>
 </body>
 
@@ -16,7 +27,8 @@
         el: "#app",
 
         data: {
-            show_div: true
+            show_div: true,
+            name: ""
         },
 
         methods: {
