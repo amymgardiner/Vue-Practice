@@ -36,6 +36,7 @@
             <tbody>
                 <tr v-for="(item, index) in list">
                     <td>{{ item.name }} - {{index}}</td>
+                    <td><button v-on:click="remove(index)" type="button">Remove</button></td>
                 </tr>
             </tbody>
         </table>
@@ -53,6 +54,8 @@
             show_div: true,
             name: "",
             list: [
+                { name: "Name 1" },
+                { name: "Name 2" }
             ]
         },
 
@@ -68,6 +71,9 @@
             add() {
                 this.list.push({ name: this.name });
                 this.name = "";
+            },
+            remove(index) {
+                this.list.splice(index, 1);
             }
         }
 
