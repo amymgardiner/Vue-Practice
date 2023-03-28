@@ -12,14 +12,16 @@
         <br>
         <br>
 
-        <select>
-
+        <select v-model="id_user">
+            <option v-for="(item, index) in list2" :value="item.id">{{item.name}}</option>
+            <option value="2">User 2</option>
+            <option value="3">User 3</option>
         </select>
 
         <input type="text" v-model="name" /> <button type="button" v-on:click="add()">Add</button>
 
         <div>
-            {{name}}
+            {{name}} - ID user: {{id_user}} Counter: {{counter}}
         </div>
         <br>V_HTML
         <div v-html="name">
@@ -51,12 +53,24 @@
         el: "#app",
 
         data: {
+            counter: 0,
+            id_user: null,
             show_div: true,
             name: "",
             list: [
                 { name: "Name 1" },
                 { name: "Name 2" }
+            ],
+            list2: [
+                { id: 1, name: "John Smith" },
+                { id: 2, name: "Billy Gate" }
             ]
+        },
+
+        watch: {
+            id_user: function () {
+                this.counter++;
+            }
         },
 
         methods: {

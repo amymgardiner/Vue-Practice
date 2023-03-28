@@ -2,6 +2,8 @@
 
 I took a short course to learn the Vue.js Javascript framework, which is a powerful tool to creating reactive components for modern web interfaces.
 
+Here is the [link](https://amymgardiner.github.io/Vue-Practice/) to show the components created from the course.
+
 ## Lesson to watch
 
 Introduction to Vue.js framework - 2021:
